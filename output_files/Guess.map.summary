@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jun 12 15:38:06 2019
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Guess
+Top-level Entity Name : Guess
+Family : Cyclone III
+Total logic elements : 705
+    Total combinational functions : 623
+    Dedicated logic registers : 364
+Total registers : 364
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

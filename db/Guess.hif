@@ -1,0 +1,234 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+10
+767
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+clock_
+# storage
+db|Guess.(2).cnf
+db|Guess.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clock_.v
+a7612e1863306b5a96a4d7b9fec93379
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+clock_:comb_7
+clock_:comb_8
+clock_:comb_9
+}
+# macro_sequence
+
+# end
+# entity
+randGen
+# storage
+db|Guess.(3).cnf
+db|Guess.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+randgen.v
+e4af15def63894f66c7cae7c888e64
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+randGen:comb_10
+}
+# macro_sequence
+
+# end
+# entity
+checker
+# storage
+db|Guess.(4).cnf
+db|Guess.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+checker.v
+e6dcb6d82ef86355f6e524184ccb841
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checker:comb_11
+}
+# macro_sequence
+
+# end
+# entity
+BCD_to_seg
+# storage
+db|Guess.(1).cnf
+db|Guess.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+bcd_to_seg.v
+91e7d08890ab30f4768676fe94eaaf8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+BCD_to_seg:comb_3
+BCD_to_seg:comb_4
+BCD_to_seg:comb_5
+BCD_to_seg:comb_6
+}
+# macro_sequence
+
+# end
+# entity
+Guess
+# storage
+db|Guess.(0).cnf
+db|Guess.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+guess.v
+a82638c3d0ef31ff6ed7db3fb19d16f9
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+s_init
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+s_input
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+s_show
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+s_end
+0011
+PARAMETER_UNSIGNED_BIN
+DEF
+s_win
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+s_lose
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

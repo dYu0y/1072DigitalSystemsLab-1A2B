@@ -1,0 +1,7 @@
+module checker(ans, in, out);
+	input[15:0] ans, in;
+	output[15:0] out;
+	reg[3:0] A, B;
+	
+	assign out = {A,4'ha,B,4'hb};
+endmodule

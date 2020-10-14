@@ -1,0 +1,9 @@
+
+State Machine - |Guess|state
+Name state.s_lose state.s_win state.s_end state.s_show state.s_input state.s_init 
+state.s_init 0 0 0 0 0 0 
+state.s_input 0 0 0 0 1 1 
+state.s_show 0 0 0 1 0 1 
+state.s_end 0 0 1 0 0 1 
+state.s_win 0 1 0 0 0 1 
+state.s_lose 1 0 0 0 0 1 

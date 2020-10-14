@@ -1,0 +1,539 @@
+Analysis & Synthesis report for Guess
+Wed Jun 12 15:38:07 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Guess|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |Guess
+ 14. Port Connectivity Checks: "clock_:comb_9"
+ 15. Port Connectivity Checks: "clock_:comb_8"
+ 16. Port Connectivity Checks: "clock_:comb_7"
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 12 15:38:06 2019   ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                      ; Guess                                   ;
+; Top-level Entity Name              ; Guess                                   ;
+; Family                             ; Cyclone III                             ;
+; Total logic elements               ; 705                                     ;
+;     Total combinational functions  ; 623                                     ;
+;     Dedicated logic registers      ; 364                                     ;
+; Total registers                    ; 364                                     ;
+; Total pins                         ; 56                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; Guess              ; Guess              ;
+; Family name                                                                ; Cyclone III        ; Stratix II         ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+
+; Guess.v                          ; yes             ; User Verilog HDL File  ; D:/University(D)/1072/數位實驗/ProjectX/Guess.v      ;
+; clock_.v                         ; yes             ; User Verilog HDL File  ; D:/University(D)/1072/數位實驗/ProjectX/clock_.v     ;
+; randGen.v                        ; yes             ; User Verilog HDL File  ; D:/University(D)/1072/數位實驗/ProjectX/randGen.v    ;
+; BCD_to_seg.v                     ; yes             ; User Verilog HDL File  ; D:/University(D)/1072/數位實驗/ProjectX/BCD_to_seg.v ;
+; checker.v                        ; yes             ; User Verilog HDL File  ; D:/University(D)/1072/數位實驗/ProjectX/checker.v    ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 705                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 623                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 266                      ;
+;     -- 3 input functions                    ; 173                      ;
+;     -- <=2 input functions                  ; 184                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 512                      ;
+;     -- arithmetic mode                      ; 111                      ;
+;                                             ;                          ;
+; Total registers                             ; 364                      ;
+;     -- Dedicated logic registers            ; 364                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 56                       ;
+; Maximum fan-out node                        ; randGen:comb_10|Equal0~0 ;
+; Maximum fan-out                             ; 146                      ;
+; Total fan-out                               ; 3183                     ;
+; Average fan-out                             ; 2.90                     ;
++---------------------------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; |Guess                     ; 623 (174)         ; 364 (121)    ; 0           ; 0            ; 0       ; 0         ; 56   ; 0            ; |Guess                   ; work         ;
+;    |BCD_to_seg:comb_3|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|BCD_to_seg:comb_3 ;              ;
+;    |BCD_to_seg:comb_4|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|BCD_to_seg:comb_4 ;              ;
+;    |BCD_to_seg:comb_5|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|BCD_to_seg:comb_5 ;              ;
+;    |BCD_to_seg:comb_6|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|BCD_to_seg:comb_6 ;              ;
+;    |checker:comb_11|       ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|checker:comb_11   ;              ;
+;    |clock_:comb_7|         ; 43 (43)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|clock_:comb_7     ;              ;
+;    |clock_:comb_8|         ; 43 (43)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|clock_:comb_8     ;              ;
+;    |clock_:comb_9|         ; 42 (42)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|clock_:comb_9     ;              ;
+;    |randGen:comb_10|       ; 223 (223)         ; 143 (143)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Guess|randGen:comb_10   ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |Guess|state                                                                           ;
++---------------+--------------+-------------+-------------+--------------+---------------+--------------+
+; Name          ; state.s_lose ; state.s_win ; state.s_end ; state.s_show ; state.s_input ; state.s_init ;
++---------------+--------------+-------------+-------------+--------------+---------------+--------------+
+; state.s_init  ; 0            ; 0           ; 0           ; 0            ; 0             ; 0            ;
+; state.s_input ; 0            ; 0           ; 0           ; 0            ; 1             ; 1            ;
+; state.s_show  ; 0            ; 0           ; 0           ; 1            ; 0             ; 1            ;
+; state.s_end   ; 0            ; 0           ; 1           ; 0            ; 0             ; 1            ;
+; state.s_win   ; 0            ; 1           ; 0           ; 0            ; 0             ; 1            ;
+; state.s_lose  ; 1            ; 0           ; 0           ; 0            ; 0             ; 1            ;
++---------------+--------------+-------------+-------------+--------------+---------------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; clock_:comb_9|p[31]                     ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[31]                     ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[31]                     ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[19..30]                 ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[18..30]                 ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[23..30]                 ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[0]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[0]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[0]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[1]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[1]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[1]                      ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[2..3]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[2..3]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[2..3]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[4..6,8]                 ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[5..6]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[5..6]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[10,16]                  ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[8..9]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[7..8]                   ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_9|p[13..15]                 ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[10..11,13]              ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[13,15,21]               ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_7|p[22]                     ; Merged with clock_:comb_7|p[20]        ;
+; clock_:comb_7|p[20]                     ; Merged with clock_:comb_7|p[19]        ;
+; clock_:comb_7|p[19]                     ; Merged with clock_:comb_7|p[18]        ;
+; clock_:comb_7|p[18]                     ; Merged with clock_:comb_7|p[17]        ;
+; clock_:comb_7|p[17]                     ; Merged with clock_:comb_7|p[16]        ;
+; clock_:comb_7|p[16]                     ; Merged with clock_:comb_7|p[14]        ;
+; clock_:comb_7|p[14]                     ; Merged with clock_:comb_7|p[12]        ;
+; clock_:comb_7|p[12]                     ; Merged with clock_:comb_7|p[11]        ;
+; clock_:comb_7|p[11]                     ; Merged with clock_:comb_7|p[10]        ;
+; clock_:comb_7|p[10]                     ; Merged with clock_:comb_7|p[9]         ;
+; clock_:comb_7|p[9]                      ; Merged with clock_:comb_7|p[4]         ;
+; clock_:comb_8|p[17]                     ; Merged with clock_:comb_8|p[16]        ;
+; clock_:comb_8|p[16]                     ; Merged with clock_:comb_8|p[15]        ;
+; clock_:comb_8|p[15]                     ; Merged with clock_:comb_8|p[14]        ;
+; clock_:comb_8|p[14]                     ; Merged with clock_:comb_8|p[12]        ;
+; clock_:comb_8|p[12]                     ; Merged with clock_:comb_8|p[7]         ;
+; clock_:comb_8|p[7]                      ; Merged with clock_:comb_8|p[4]         ;
+; clock_:comb_9|p[18]                     ; Merged with clock_:comb_9|p[17]        ;
+; clock_:comb_9|p[17]                     ; Merged with clock_:comb_9|p[12]        ;
+; clock_:comb_9|p[12]                     ; Merged with clock_:comb_9|p[11]        ;
+; clock_:comb_9|p[11]                     ; Merged with clock_:comb_9|p[9]         ;
+; clock_:comb_9|p[9]                      ; Merged with clock_:comb_9|p[7]         ;
+; sel_num[2]                              ; Stuck at GND due to stuck port data_in ;
+; clock_:comb_8|p[4]                      ; Merged with clock_:comb_9|p[7]         ;
+; clock_:comb_9|p[7]                      ; Merged with clock_:comb_7|p[4]         ;
+; state~8                                 ; Lost fanout                            ;
+; state~9                                 ; Lost fanout                            ;
+; state~10                                ; Lost fanout                            ;
+; state~11                                ; Lost fanout                            ;
+; state.s_end                             ; Stuck at GND due to stuck port data_in ;
+; randGen:comb_10|v[3]                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 102 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 364   ;
+; Number of registers using Synchronous Clear  ; 106   ;
+; Number of registers using Synchronous Load   ; 42    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 266   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; val_out[3]                              ; 8       ;
+; val_out[1]                              ; 8       ;
+; sel_num_sig[0]                          ; 2       ;
+; val_out[0]                              ; 7       ;
+; val_out[5]                              ; 8       ;
+; sel_num_sig[1]                          ; 2       ;
+; val_out[11]                             ; 8       ;
+; val_out[9]                              ; 8       ;
+; sel_num_sig[2]                          ; 2       ;
+; val_out[12]                             ; 7       ;
+; hp[0]                                   ; 3       ;
+; hp[1]                                   ; 3       ;
+; hp[2]                                   ; 3       ;
+; hp[3]                                   ; 3       ;
+; hp[4]                                   ; 3       ;
+; hp[5]                                   ; 3       ;
+; hp[6]                                   ; 3       ;
+; hp[7]                                   ; 3       ;
+; hp[8]                                   ; 3       ;
+; hp[9]                                   ; 4       ;
+; hp_v[1]                                 ; 7       ;
+; hp_v[3]                                 ; 6       ;
+; randGen:comb_10|nums[1]                 ; 1       ;
+; randGen:comb_10|nums[0]                 ; 1       ;
+; randGen:comb_10|nums[5]                 ; 1       ;
+; randGen:comb_10|nums[15]                ; 1       ;
+; randGen:comb_10|nums[9]                 ; 1       ;
+; randGen:comb_10|nums[8]                 ; 1       ;
+; randGen:comb_10|nums[10]                ; 1       ;
+; randGen:comb_10|nums[6]                 ; 1       ;
+; randGen:comb_10|arr2[2]                 ; 2       ;
+; randGen:comb_10|arr2[0]                 ; 2       ;
+; randGen:comb_10|arr2[15]                ; 3       ;
+; randGen:comb_10|arr2[9]                 ; 2       ;
+; randGen:comb_10|arr2[4]                 ; 2       ;
+; randGen:comb_10|arr2[7]                 ; 2       ;
+; randGen:comb_10|arr2[29]                ; 3       ;
+; randGen:comb_10|arr2[33]                ; 3       ;
+; randGen:comb_10|arr2[25]                ; 4       ;
+; randGen:comb_10|arr2[26]                ; 4       ;
+; randGen:comb_10|arr2[18]                ; 2       ;
+; randGen:comb_10|arr2[34]                ; 5       ;
+; randGen:comb_10|arr2[36]                ; 5       ;
+; randGen:comb_10|arr2[28]                ; 4       ;
+; randGen:comb_10|arr2[32]                ; 5       ;
+; Total number of inverted registers = 45 ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Guess|hp_v[2]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[45] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[60] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[79] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[72] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[71] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |Guess|randGen:comb_10|arr1[55] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |Guess|val_out[2]               ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |Guess|val_out[14]              ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Guess|sel_num_sig[0]           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |Guess|hp_v[1]                  ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |Guess|val_out[11]              ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |Guess|val_out[12]              ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |Guess|hp[8]                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Guess|sel_num                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Guess|guess_num                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Guess|guess_num                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Guess|guess_num                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Guess|guess_num                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Guess|hp_v                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Guess|state                    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; No         ; |Guess|state                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Guess ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; s_init         ; 0000  ; Unsigned Binary                              ;
+; s_input        ; 0001  ; Unsigned Binary                              ;
+; s_show         ; 0010  ; Unsigned Binary                              ;
+; s_end          ; 0011  ; Unsigned Binary                              ;
+; s_win          ; 0100  ; Unsigned Binary                              ;
+; s_lose         ; 0101  ; Unsigned Binary                              ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_:comb_9"                                                                                                                                                                              ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; period        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; period[15..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[3..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[4]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_:comb_8"                                                                                                                                                                              ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; period        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; period[15..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[3]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; period[2]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[1]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; period[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_:comb_7"                                                                                                                                                                              ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; period        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; period[7..3]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; period[15..8] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[2]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; period[1]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; period[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Wed Jun 12 15:38:01 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Guess -c Guess
+Info: Found 1 design units, including 1 entities, in source file guess.v
+    Info: Found entity 1: Guess
+Info: Found 1 design units, including 1 entities, in source file clock_.v
+    Info: Found entity 1: clock_
+Info: Found 1 design units, including 1 entities, in source file randgen.v
+    Info: Found entity 1: randGen
+Info: Found 1 design units, including 1 entities, in source file bcd_to_seg.v
+    Info: Found entity 1: BCD_to_seg
+Info: Found 1 design units, including 1 entities, in source file checker.v
+    Info: Found entity 1: checker
+Warning (10236): Verilog HDL Implicit Net warning at Guess.v(21): created implicit net for "clk_display"
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(15): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(16): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(17): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(18): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(19): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(20): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(21): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(22): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at Guess.v(23): instance has no name
+Info: Elaborating entity "Guess" for the top level hierarchy
+Warning (10855): Verilog HDL warning at Guess.v(33): initial value for variable ans should be constant
+Warning (10230): Verilog HDL assignment warning at Guess.v(63): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Guess.v(72): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(78): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(84): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(90): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(97): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Guess.v(106): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(142): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Guess.v(143): truncated value with size 32 to match size of target (10)
+Info: Elaborating entity "BCD_to_seg" for hierarchy "BCD_to_seg:comb_3"
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(7): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(8): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(9): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(10): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(11): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(12): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(13): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(14): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(15): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(16): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(17): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(18): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(19): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at BCD_to_seg.v(20): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "clock_" for hierarchy "clock_:comb_7"
+Info: Elaborating entity "randGen" for hierarchy "randGen:comb_10"
+Warning (10230): Verilog HDL assignment warning at randGen.v(23): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at randGen.v(31): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "checker" for hierarchy "checker:comb_11"
+Warning: 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Timing-Driven Synthesis is running
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
+    Info: Register "state~8" lost all its fanouts during netlist optimizations.
+    Info: Register "state~9" lost all its fanouts during netlist optimizations.
+    Info: Register "state~10" lost all its fanouts during netlist optimizations.
+    Info: Register "state~11" lost all its fanouts during netlist optimizations.
+Warning: Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "in[8]"
+    Warning (15610): No output dependent on input pin "in[7]"
+    Warning (15610): No output dependent on input pin "in[6]"
+    Warning (15610): No output dependent on input pin "in[5]"
+    Warning (15610): No output dependent on input pin "in[4]"
+    Warning (15610): No output dependent on input pin "in[3]"
+    Warning (15610): No output dependent on input pin "in[2]"
+    Warning (15610): No output dependent on input pin "in[1]"
+    Warning (15610): No output dependent on input pin "in[0]"
+Info: Implemented 773 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
+    Info: Implemented 42 output pins
+    Info: Implemented 717 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 235 megabytes
+    Info: Processing ended: Wed Jun 12 15:38:07 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:08
+
+
